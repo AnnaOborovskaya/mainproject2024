@@ -3,7 +3,8 @@ from fastapi.responses import FileResponse
 from public.users import users_router
 from public.orders import orders_router
 import uvicorn
-
+from db import *
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 

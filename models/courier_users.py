@@ -1,7 +1,7 @@
 from typing import Union, Annotated
 import datetime
 from pydantic import BaseModel, Field
-from sqlalchemy import Column, String, Integer, DATETIME, ARRAY
+from sqlalchemy import Column, String, Integer, DATETIME, ARRAY, ForeignKey
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import declarative_base
 from enum import Enum
@@ -49,4 +49,5 @@ class Main_User_4(Main_User_1):
     time_start: Union[int, None] = None
     time_end: Union[int, None] = None
     counter_ord: Union[int, None] = None
-    time_start_work: Union[int, None] = None    
+    time_start_work: Union[int, None] = None  
+

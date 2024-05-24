@@ -19,6 +19,7 @@ settings.POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
 settings.POSTGRES_USER = os.environ.get('POSTGRES_USER')
 settings.POSTGRES_DB = os.environ.get('POSTGRES_DB')
 settings.POSTGRES_HOST = os.environ.get('POSTGRES_HOST')
+
 settings.POSTGRES_DATABASE_URLA = f"postgresql+asyncpg:" \
                                   f"//{settings.POSTGRES_USER}:" \
                                   f"{settings.POSTGRES_PASSWORD}" \
