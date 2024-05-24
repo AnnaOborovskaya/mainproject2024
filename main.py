@@ -11,6 +11,15 @@ app = FastAPI()
 app.include_router(users_router)
 app.include_router(orders_router)
 
+@app.on_event("startup")
+async def on_startup():
+    open("log.txt", mode="a").write(f'{datetime.utcnow()}: Begin\n')
+    await create_tables()
+
+@app.on_event("shutdown")
+async def shutdown():
+    open("log.txt", mode="a").write(f'{datetime.utcnow()}: End\n')
+    
 @app.get('/')
 async def main():
     return FileResponse("files/index.html")
